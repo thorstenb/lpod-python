@@ -603,7 +603,8 @@ class odf_document(object):
         # Insert it!
         if existing is not None:
             container.delete(existing)
-        container.append(style)
+        if container:
+            container.append(style)
         return style.get_name()
 
 
